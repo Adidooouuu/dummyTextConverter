@@ -1,7 +1,8 @@
 from src import letterWithSound
+from shared import inputHelper
 import unidecode as uniDecoder
 
-userInput = input("Entrée : \n>>>")
+userInput = input("Phrase à décoder : \n>>>")
 userInput = userInput.lower()
 
 syllable = []
@@ -21,9 +22,3 @@ for letter in userInput:
             syllable.clear()
             stringedSyllable = ""
 print(answer)
-
-
-
-
-
-#Arichikatakitoku

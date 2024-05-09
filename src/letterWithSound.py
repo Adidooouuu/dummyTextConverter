@@ -26,7 +26,3 @@ sounds = {
     "y" : "fu",
     "z" : "zi"
 }
-#v1 : lettre vers "syllabe"
-    #si une lettre est entrée (input dans key), sortir syllabe (output value associée) : + simple
-#v2 : syllabe vers lettre
-    #si une syllabe est entrée (input dans value), sortir lettre (output key associée)
