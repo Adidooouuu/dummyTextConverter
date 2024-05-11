@@ -1,6 +1,6 @@
 from shared import inputHelper
 
-input_created = inputHelper.InputHelper.input_creation(
+inputHelper = inputHelper.InputHelper(
   choices_list = [
   "Convertir une phrase en syllabes",
   "Convertir des syllabes en mots",
@@ -8,6 +8,8 @@ input_created = inputHelper.InputHelper.input_creation(
   ],
   cta_message = "Sélectionne une conversion "
 )
+
+input_created = inputHelper.input_creation()
 
 print(f"Tu veux donc {input_created["answer"]}. Eh beh go baby go!")
 

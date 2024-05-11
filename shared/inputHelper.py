@@ -2,21 +2,27 @@ import inquirer
 from inquirer import list_input
 
 class InputHelper:
-    # def __init__(self, choices_list: list[str], answer: str, question, cta_message: str = ""):
-    #     self.choices_list = choices_list
-    #     self.cta_message = cta_message
-    #     self.question = question
-    #     self.answer = answer
+    def __init__(
+        self,
+        choices_list: list[str],
+        cta_message: str = ""
+        ):
+        self.choices_list = choices_list
+        self.cta_message = cta_message
 
-    def input_creation(choices_list: list[str], cta_message: str = "") -> dict:
+    def input_creation(self) -> dict:
         question = list_input(
-            message = cta_message,
-            choices = choices_list
+            message = self.cta_message,
+            choices = self.choices_list
             )
         answer  = question.lower()
-        return {"choices_list": choices_list, "question": question, "answer": answer}
+        return {
+            "choices_list": self.choices_list,
+            "question": question,
+            "answer": answer
+            }
 
-    # def associate_choice_to_module():
+    # def associate_choice_to_module(self):
     #     if input_created["answer"] == input_created["choices_list"][0].lower():
     #         from functionnalities import l2s as letter2Sound
     #     elif input_created["answer"] == input_created["choices_list"][1].lower():
