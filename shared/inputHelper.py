@@ -1,15 +1,28 @@
+import inquirer
+from inquirer import list_input
+
 class InputHelper:
-    def input_to_lower_case(self, input):
-        """Converts the user input to lowercase.
-        Args:
-        self: The InputHelper object instance.
-        input: The user input to convert to lowercase.
+    # def __init__(self, choices_list: list[str], answer: str, question, cta_message: str = ""):
+    #     self.choices_list = choices_list
+    #     self.cta_message = cta_message
+    #     self.question = question
+    #     self.answer = answer
 
-        Returns:
-        The lowercase version of the input.
+    def input_creation(choices_list: list[str], cta_message: str = "") -> dict:
+        question = list_input(
+            message = cta_message,
+            choices = choices_list
+            )
+        answer  = question.lower()
+        return {"choices_list": choices_list, "question": question, "answer": answer}
 
-        ⚠️ just a try of function ; logically useless in that case.
-        """
-        return input.lower()
-
-    
+    # def associate_choice_to_module():
+    #     if input_created["answer"] == input_created["choices_list"][0].lower():
+    #         from functionnalities import l2s as letter2Sound
+    #     elif input_created["answer"] == input_created["choices_list"][1].lower():
+    #         from functionnalities import s2l as sound2Letter
+    #     elif input_created["answer"] == input_created["choices_list"][2].lower():
+    #         print("À bientôt !")
+    #         exit(0)
+    #     else:
+    #         print("Entrée invalide")
