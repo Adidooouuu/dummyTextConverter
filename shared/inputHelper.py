@@ -37,3 +37,14 @@ class InputHelper:
         else:
             print("Entrée invalide")
             exit(0)
+
+
+def set_user_input(cta_message: str) -> str:
+    while True:
+        user_input = input(cta_message)
+        user_input = user_input.strip()
+        if user_input:
+            user_input = user_input.lower()
+            return user_input
+        else:
+            print("Valeur vide.")

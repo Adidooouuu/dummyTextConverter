@@ -2,15 +2,16 @@ from src import letterWithSound
 from shared import inputHelper
 import unidecode as uniDecoder
 
-userInput = input("Phrase à décoder : \n>>>")
-userInput = userInput.lower()
+userInput = inputHelper.set_user_input(cta_message="Phrase à décoder : \n>>>")
 
 syllable = []
 answer = ""
 separator = ""
 
 for letter in userInput:
-    if letter.isalpha():
+    if not letter.isalpha():
+        answer += letter
+    elif letter.isalpha():
         syllable.append(letter)
     else:
         continue

@@ -1,7 +1,7 @@
 from src import letterWithSound
+from shared import inputHelper
 
-userInput = input("Phrase à encoder : \n>>>")
-userInput = userInput.lower()
+userInput = inputHelper.set_user_input(cta_message="Phrase à encoder : \n>>>")
 answer = ""
 
 for letter in userInput:
