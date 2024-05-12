@@ -12,8 +12,11 @@ class InputHelper:
         choice = question.lower()
         return choice
 
+    def lower_choices(self, choices_list: list[str]) -> list[str]:
+        return [element.lower() for element in choices_list]
+
     def use_correct_import(self, choice: str = "") -> callable:
-        choices_list_lowered = [element.lower() for element in self.choices_list]
+        choices_list_lowered = self.lower_choices(self.choices_list)
 
         choices_dict = {
             choices_list_lowered[0]: "functionnalities.l2s",
