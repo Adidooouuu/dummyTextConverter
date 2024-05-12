@@ -9,16 +9,9 @@ inputHelper = inputHelper.InputHelper(
   cta_message = "Sélectionne une conversion "
 )
 
-input_created = inputHelper.input_creation()
+choice = inputHelper.get_user_choice()
+choices_list = inputHelper.choices_list
 
-print(f"Tu veux donc {input_created["answer"]}. Eh beh go baby go!")
+print(f"Tu veux donc {choice}. Eh beh go baby go!")
 
-if input_created["answer"] == input_created["choices_list"][0].lower():
-  from functionnalities import l2s as letter2Sound
-elif input_created["answer"] == input_created["choices_list"][1].lower():
-  from functionnalities import s2l as sound2Letter
-elif input_created["answer"] == input_created["choices_list"][2].lower():
-  print("À bientôt !")
-  exit(0)
-else:
-  print("Entrée invalide")
+inputHelper.use_correct_import(choice, choices_list)
