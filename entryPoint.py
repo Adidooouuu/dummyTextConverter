@@ -10,8 +10,7 @@ inputHelper = inputHelper.InputHelper(
 )
 
 choice = inputHelper.get_user_choice()
-choices_list = inputHelper.choices_list
 
 print(f"Tu veux donc {choice}. Eh beh go baby go!")
 
-inputHelper.use_correct_import(choice, choices_list)
+inputHelper.use_correct_import(choice)
